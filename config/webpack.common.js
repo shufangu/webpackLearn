@@ -32,6 +32,13 @@ const commonConfig = isProduction => ({
   module: {
     rules: [
       {
+        test: /\.md$/i,
+        use: [
+          // "html-loader",
+          "md-loader"
+        ]
+      },
+      {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: [
@@ -77,6 +84,9 @@ const commonConfig = isProduction => ({
         sideEffects: true, // react 脚手架中
       },
     ],
+  },
+  resolveLoader: {
+    modules: ["node_modules", "./lz-loaders"]
   },
   plugins: [
     new HtmlWebpackPlugin({

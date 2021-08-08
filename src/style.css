@@ -6,3 +6,8 @@
 .link {
     margin-right: 14px;
 }
+
+pre {
+    background-color: #fcfcfc;
+    padding: 10px;
+}
